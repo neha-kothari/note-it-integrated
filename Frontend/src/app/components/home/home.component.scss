@@ -1,0 +1,250 @@
+
+  
+:root {
+    --primary: #141414;
+    --light: #F3F3F3;
+    --dark: #686868;
+  }
+  .searchBar {
+    .bar {
+      margin: 0 auto;
+      width: 80vw;
+      border-radius: 30px;
+      border: 1px solid #dcdcdc;
+    }
+    .bar:hover {
+      box-shadow: 1px 1px 8px 1px #dcdcdc;
+    }
+    .bar:focus-within {
+      box-shadow: 1px 1px 8px 1px #dcdcdc;
+      outline: none;
+    }
+    .searchbar {
+      height: 45px;
+      border: none;
+      width: 100%;
+      font-size: 16px;
+      outline: none;
+      padding-left: 30px;
+      border-radius: 30px;
+    }
+  
+    ul {
+      list-style: none;
+      padding-left: 20px;
+      // margin-left: 0px;
+    }
+    li {
+      padding: 5px;
+      margin: 5px;
+      cursor: pointer;
+    }
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  h1 {
+    padding-top: 20px;
+  }
+  
+  .wrapper {
+    margin: 0;
+    padding: 0;
+  }
+  p{
+    margin-bottom: 0.2rem;
+  }
+  //.catBadge:hover{
+  //  background-image: linear-gradient(45deg, rgb(205, 123, 167), rgb(13, 32, 152));
+  //}
+  .catBadge{
+    background-image: linear-gradient(45deg, #c76db0b5,#4027c1ba);
+  }
+  
+  
+  /* MAIN CONTIANER */
+  .location{
+    padding: 20px;
+  
+  }
+  .box {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(6, minmax(100px, 1fr));
+    text-align: center;
+  }
+  
+  .box a {
+    transition: transform .3s;
+  }
+  
+  .box a:hover {
+    transition: transform .3s;
+    -ms-transform: scale(1.4);
+    -webkit-transform: scale(1.4);
+    transform: scale(1.3);
+  }
+  
+  .cover img:hover {
+    transition: transform .3s;
+    -ms-transform: scale(1.4);
+    -webkit-transform: scale(1.4);
+    transform: scale(1.02);
+  }
+  
+  .box img {
+    border-radius: 2px;
+    margin-bottom: 10px;
+  }
+  
+  /* LINKS */
+  .link {
+    padding: 50px;
+  }
+  
+  .sub-links ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .sub-links a {
+    color: var(--dark);
+    text-decoration: none;
+  }
+  
+  .sub-links a:hover {
+    color: var(--dark);
+    text-decoration: underline;
+  }
+  
+  .logos a {
+    padding: 10px;
+  }
+  
+  .logo {
+    color: var(--dark);
+  }
+  
+  
+  /* FOOTER */
+  footer {
+    padding: 20px;
+    text-align: center;
+    color: var(--dark);
+    margin: 10px;
+  }
+  
+  /* MEDIA QUERIES */
+  
+  @media(max-width: 900px) {
+  
+    header {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+      "nt nt nt  .  .  . sb . . . "
+      "mn mn mn mn mn mn  mn mn mn mn";
+    }
+  
+    .box {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(4, minmax(100px, 1fr));
+    }
+  
+  }
+  
+  @media(max-width: 700px) {
+  
+    header {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+      "nt nt nt  .  .  . sb . . . "
+      "mn mn mn mn mn mn  mn mn mn mn";
+    }
+  
+    .box {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(3, minmax(100px, 1fr));
+    }
+  
+    .sub-links ul {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+  }
+  
+  @media(max-width: 500px) {
+  
+    .wrapper {
+      font-size: 15px;
+    }
+  
+    header {
+      margin: 0;
+      padding: 20px 0 0 0;
+      position: static;
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-areas:
+      "nt"
+      "mn"
+      "sb";
+      text-align: center;
+    }
+  
+    h1 {
+      text-align: center;
+      font-size: 18px;
+    }
+  
+  
+    .box {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(1, 1fr);
+      text-align: center;
+  
+    }
+  
+    .box a:hover {
+      transition: transform .3s;
+      -ms-transform: scale(1);
+      -webkit-transform: scale(1);
+      transform: scale(1.2);
+    }
+  
+    .logos {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      text-align: center;
+    }
+  
+    .sub-links ul {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(1, 1fr);
+      text-align: center;
+      font-size: 15px;
+    }
+  
+  
+  }
+  
+
+  .location{
+    max-width: 70vw;
+  }

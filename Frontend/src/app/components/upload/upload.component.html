@@ -1,0 +1,75 @@
+<app-navbar></app-navbar>
+
+<div class="container" style="max-width: 70vw;">
+    <div class="row text-center mt-4">
+        <h2>Upload Book</h2>
+    </div>
+
+    <div class="row source-sans-pro">
+        <div class="input-group mb-3">
+            <span class="input-group-text">ISBN</span>
+            <input type="text" class="form-control" id="isbn" aria-describedby="isbn">
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">Title</span>
+            <input type="text" class="form-control" id="title" aria-describedby="title">
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">Author</span>
+            <input type="text" class="form-control" id="author" aria-describedby="author">
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">Publisher</span>
+            <input type="text" class="form-control" id="publisher" aria-describedby="publisher">
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">Year of Release</span>
+            <input type="text" class="form-control" id="yearOfRelease" aria-describedby="yearOfRelease">
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">Image Location</span>
+            <input type="text" class="form-control" id="imageLocation" aria-describedby="imageLocation">
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text" >Description</span>
+            <input type="text" class="form-control" aria-describedby="description" id="description">
+          </div>
+
+          <!-- Upload -->
+          <div class="input-group mb-3">
+            <input type="file" class="form-control" id="file" (change)="selectFile($event)">
+          </div>
+    </div>
+
+    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Split book?</button>
+    <button class="btn btn-primary mx-3" [disabled]="!selectedFiles" (click)="upload()">Add book</button>
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Split Book into Chapters</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form></form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form></form>

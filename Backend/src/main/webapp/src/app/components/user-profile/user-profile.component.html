@@ -1,0 +1,73 @@
+<app-navbar></app-navbar>
+<div class="container" style="max-width: 70vw;">
+    <div class="row mt-4 mb-4">
+        <h2 class="source-sans-pro">Profile Details and History</h2>
+    </div>
+
+    <div class="row inter-regular">
+        <p><strong>Name: </strong> <span>{{profile_details.name}}</span></p>
+        <p><strong>Email: </strong> <span>{{profile_details.emailAddress}}</span></p>
+        <p><strong>Phone Number: </strong> <span>{{profile_details.phoneNumber}}</span></p>
+    </div>
+
+    <div class="row">
+        <p>
+            <!-- <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Link with href
+            </a> -->
+            <button class="btn btn-primary m-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                My Uploads
+            </button>
+            <button class="btn btn-primary m-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+                My Note Books
+              </button>
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body mt-3">
+                <!-- table for upload books -->
+                <table class="table mt-4 source-sans-pro mt-0">
+                    <thead>
+                      <tr>
+                        <th scope="col">Author</th>
+                        <th scope="col">Book Name</th>
+                        <!-- <th scope="col">ISBN Number</th> -->
+                        <th scope="col">Uploaded On</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of profile_details.uploadedBooks">
+                        <th scope="row">{{item.author}}</th>
+                        <td>{{item.bookName}}</td>
+                        <!-- <td>{{item.isbnNumber}}</td> -->
+                        <td>{{item.uploadedOn}}</td>
+                      </tr>
+            
+                    </tbody>
+                  </table>
+            </div>
+          </div>
+
+          <div class="collapse" id="collapseExample1">
+            <div class="card card-body mt-3">
+               <!-- table for note books -->
+               <table class="table mt-4 source-sans-pro">
+                <thead>
+                  <tr>
+                    <th scope="col">Custom Name</th>
+                    <th scope="col">Created On</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of profile_details.notebooks">
+                    <th scope="row">{{item.customName}}</th>
+                    <td scope="row">{{item.createdOn}}</td>
+                  </tr>
+        
+                </tbody>
+              </table>
+            </div>
+          </div>
+    </div>
+</div>

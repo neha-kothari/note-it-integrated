@@ -1,0 +1,36 @@
+server:
+  port: 8082
+  error:
+    include-message: always
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 200MB
+      max-request-size: 215MB
+  application:
+    name: noteit
+  datasource:
+#    url: jdbc:h2:mem:testdb
+#    username: sa
+#    password: password
+    # alternative datasource: external mysql database example
+      url: jdbc:mysql://mysqldb:3307/NoteItDB?createDatabaseIfNotExist=true
+      username: root
+      password: example
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+#JWT
+jwt:
+  secret-key: noteit
+
+noteit:
+  notebook:
+    path: /maven-app/noteBooks/
+  book:
+    path: /maven-app/books/
+    default-image:
+          path: https://us.123rf.com/450wm/oculo/oculo2004/oculo200400003/143645399-no-image-available-icon.jpg?ver=6

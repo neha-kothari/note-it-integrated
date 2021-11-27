@@ -1,0 +1,153 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <!-- Books search input -->
+    <div class="row searchBar mt-4">
+        <div class="bar source-sans-pro">
+          <!-- <input class="searchbar" type="text" title="Search" (input)="textInputChange($event.target)"> -->
+          <input id="fuzeSearch" class = "searchbar" type="text" placeholder="Enter Book Name" (input)="textInputChange($event.target)">
+          <ul style="margin-bottom: 0px;">
+            <li *ngFor="let book of all_books_fuse" routerLink='/book/{{book.item.bookId}}'>{{book.item.bookName}}</li>
+          </ul>
+        </div>
+      </div>
+
+
+
+
+    <!-- Books shelf -->
+    <div class="location mx-auto " >
+        <h2 id="home" class="latest-heading harmattan inter-medium my-2" routerLink='/genre/latest'>All Books</h2>
+        <!-- <br/><br/> -->
+        <div *ngIf='all_books' class="box">
+          <div  *ngFor="let book of all_books">
+            <div class="cover">
+              <a routerLink='/book/{{book.bookId}}'>
+                <img
+                src="{{book.imageLocation}}"
+                  alt="{{book.bookName}}"/>
+              </a>
+            </div>
+            <div>
+              <strong>{{book.bookName}}</strong>
+              <p style="font-size:0.9rem" class="source-sans-pro"><strong>Author:</strong> {{book.author}}</p>
+              <p style="font-size:0.8rem" class="source-sans-pro"><strong>Uploaded By: </strong>{{book.uploadedByUser}}</p>
+            </div>
+          </div>
+
+
+          <!-- <div>
+            <div class="cover">
+              <a routerLink='/book/1234'>
+                <img
+                src="https://books.google.co.in/books/content?id=v8NTA2mHL5kC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE71h3Az2nr_psCzhj72xWN-y6kHuVmzHh_pJHCR4uYqfwHVwmAptbqptujbd--okAITGlzGkvzl0g77nGSEQQognZYtmd15N4PLmpbgc1vAZrUpWgrV8kMGqFpZ_dDYtsWSJ5ziE"
+                  alt=""/>
+              </a>
+            </div>
+            <div>
+              <strong>Router Link</strong>
+              <p>Author name</p>
+              <div class="catBadge badge badge-primary ">Category</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="cover">
+              <a routerLink='#'>
+                <img
+                src="https://books.google.co.in/books/content?id=v8NTA2mHL5kC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE71h3Az2nr_psCzhj72xWN-y6kHuVmzHh_pJHCR4uYqfwHVwmAptbqptujbd--okAITGlzGkvzl0g77nGSEQQognZYtmd15N4PLmpbgc1vAZrUpWgrV8kMGqFpZ_dDYtsWSJ5ziE"
+                  alt=""/>
+              </a>
+            </div>
+            <div>
+              <strong>book title</strong>
+              <p>Author name</p>
+              <div class="catBadge badge badge-primary ">Category</div>
+            </div>
+          </div>
+
+
+          <div>
+            <div class="cover">
+              <a routerLink='#'>
+                <img
+                src="https://books.google.co.in/books/content?id=v8NTA2mHL5kC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE71h3Az2nr_psCzhj72xWN-y6kHuVmzHh_pJHCR4uYqfwHVwmAptbqptujbd--okAITGlzGkvzl0g77nGSEQQognZYtmd15N4PLmpbgc1vAZrUpWgrV8kMGqFpZ_dDYtsWSJ5ziE"
+                  alt=""/>
+              </a>
+            </div>
+            <div>
+              <strong>book title</strong>
+              <p>Author name</p>
+              <div class="catBadge badge badge-primary ">Category</div>
+            </div>
+          </div>
+
+
+          <div>
+            <div class="cover">
+              <a routerLink='#'>
+                <img
+                src="https://books.google.co.in/books/content?id=v8NTA2mHL5kC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE71h3Az2nr_psCzhj72xWN-y6kHuVmzHh_pJHCR4uYqfwHVwmAptbqptujbd--okAITGlzGkvzl0g77nGSEQQognZYtmd15N4PLmpbgc1vAZrUpWgrV8kMGqFpZ_dDYtsWSJ5ziE"
+                  alt=""/>
+              </a>
+            </div>
+            <div>
+              <strong>book title</strong>
+              <p>Author name</p>
+              <div class="catBadge badge badge-primary ">Category</div>
+            </div>
+          </div>
+
+
+
+          <div>
+            <div class="cover">
+              <a routerLink='#'>
+                <img
+                src="https://books.google.co.in/books/content?id=v8NTA2mHL5kC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE71h3Az2nr_psCzhj72xWN-y6kHuVmzHh_pJHCR4uYqfwHVwmAptbqptujbd--okAITGlzGkvzl0g77nGSEQQognZYtmd15N4PLmpbgc1vAZrUpWgrV8kMGqFpZ_dDYtsWSJ5ziE"
+                  alt=""/>
+              </a>
+            </div>
+            <div>
+              <strong>book title</strong>
+              <p>Author name</p>
+              <div class="catBadge badge badge-primary ">Category</div>
+            </div>
+          </div>
+
+
+
+          <div>
+            <div class="cover">
+              <a routerLink='#'>
+                <img
+                src="https://books.google.co.in/books/content?id=v8NTA2mHL5kC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE71h3Az2nr_psCzhj72xWN-y6kHuVmzHh_pJHCR4uYqfwHVwmAptbqptujbd--okAITGlzGkvzl0g77nGSEQQognZYtmd15N4PLmpbgc1vAZrUpWgrV8kMGqFpZ_dDYtsWSJ5ziE"
+                  alt=""/>
+              </a>
+            </div>
+            <div>
+              <strong>book title</strong>
+              <p>Author name</p>
+              <div class="catBadge badge badge-primary ">Category</div>
+            </div>
+          </div>
+
+
+          <div>
+            <div class="cover">
+              <a routerLink='#'>
+                <img
+                src="https://books.google.co.in/books/content?id=v8NTA2mHL5kC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE71h3Az2nr_psCzhj72xWN-y6kHuVmzHh_pJHCR4uYqfwHVwmAptbqptujbd--okAITGlzGkvzl0g77nGSEQQognZYtmd15N4PLmpbgc1vAZrUpWgrV8kMGqFpZ_dDYtsWSJ5ziE"
+                  alt=""/>
+              </a>
+            </div>
+            <div>
+              <strong>book title</strong>
+              <p>Author name</p>
+              <div class="catBadge badge badge-primary ">Category</div>
+            </div>
+          </div> -->
+
+          
+        </div>
+      </div>
+</div>

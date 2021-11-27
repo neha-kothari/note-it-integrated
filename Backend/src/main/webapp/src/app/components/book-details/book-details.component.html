@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+
+<div class="container"  style="max-width: 60vw;">
+    <div class="row mt-4">
+        <div class="col-md-4">
+          <div class="cover text-center">
+              <img src="{{book_details.imageLocation}}" style="max-width: 50%;"/>
+          </div>
+        </div>
+        <div class="col-md-8">
+            <h4 class="inter-medium mb-4">Book Details:</h4>
+            <p class="source-sans-pro"><strong>Book Name: </strong> <span>{{book_details.bookName}}</span></p>
+            <p class="source-sans-pro"><strong>Author: </strong> <span>{{book_details.author}}</span></p>
+            <p class="source-sans-pro"><strong>Uploaded By: </strong> <span>{{book_details.uploadedByUser}}</span></p>
+            <button class="btn btn-primary mr4" (click)="downloadEbook()">Download ebook</button>
+            <button type="button" *ngIf='book_details.chapters' class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" >Select Chapters</button>
+        </div>
+    </div>
+
+
+    <div class="row mt-4 mx-auto">
+        <h5 class="inter-regular">Book Description: </h5>
+        <p class="source-sans-pro">{{book_details.description}}</p>
+
+    <div *ngIf='book_details.chapters' class="row mt-4">
+        <h5 class="inter-regular">Chapter Information:</h5>
+        <div class="shadow br2 mt-4 p-3 source-sans-pro" *ngFor="let book of book_details.chapters">
+            <!-- <p><strong>chapterId: </strong><span>{{book.chapterId}}</span></p> -->
+            <p><strong>Chapter Number: </strong><span>{{book.chapterNumber}}</span></p>
+            <p><strong>Chapter Name: </strong><span>{{book.chapterName}}</span></p>
+            <p><strong>Start Page: </strong><span>{{book.startPage}}</span></p>
+            <p><strong>End Page: </strong><span>{{book.endPage}}</span></p>
+            <p><strong>Description: </strong><span>{{book.description}}</span></p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Chapters</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Checkbox Looping -->
+          <div class="source-sans-pro" *ngFor="let book of book_details.chapters">
+            <input type="checkbox" id="{{book.chapterId}}" class="m-1"><label for="{{book.chapterId}}">  {{book.chapterName}}</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="addtoLocal()">Add to Notes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

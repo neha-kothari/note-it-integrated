@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  mysqldb:
+    platform: linux/x86_64
+    image: mysql:5.7
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=example
+      - MYSQL_DATABASE=NoteItDB
+    ports:
+      - 3307:3306
+    volumes:
+      - db:/var/lib/mysql
+      - ./books:/maven-app/books
+      - ./NoteBooks:/maven-app/noteBooks
+
+  app:
+    depends_on:
+      - mysqldb
+    build: ./
+    restart: on-failure
+    ports:
+      - 8082:8082
+    # environment:
+    #   SPRING_APPLICATION_JSON: '{
+    #     "spring.datasource.url"  : "jdbc:mysql://mysqldb:$MYSQLDB_DOCKER_PORT/$MYSQLDB_DATABASE?useSSL=false",
+    #     "spring.datasource.username" : "$MYSQLDB_USER",
+    #     "spring.datasource.password" : "$MYSQLDB_ROOT_PASSWORD",
+    #     "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
+    #     "spring.jpa.hibernate.ddl-auto" : "update"
+    #   }'
+    # volumes:
+    #   - .m2:/root/.m2
+    stdin_open: true
+    tty: true
+
+volumes:
+  db:
