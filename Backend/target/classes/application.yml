@@ -15,9 +15,10 @@ spring:
 #    username: sa
 #    password: password
     # alternative datasource: external mysql database example
-      url: jdbc:mysql://localhost:3306/NoteItDB?createDatabaseIfNotExist=true
-      username: root
-      password: password
+#      url: jdbc:mysql://noteitsql.mysql.database.azure.com:3306/NoteItDB?createDatabaseIfNotExist=true
+      url: jdbc:mysql://noteitsql.mysql.database.azure.com:3306/noteitdb?useSSL=true
+      username: neha
+      password: Password@123
 
   jpa:
     hibernate:
@@ -29,8 +30,8 @@ jwt:
 
 noteit:
   notebook:
-    path: /home/nehakothari/Desktop/engage-dir/notebooks
+    path: /maven-app/noteBooks/
   book:
-    path: /home/nehakothari/Desktop/engage-dir/books/
+    path: /maven-app/books/
     default-image:
           path: https://us.123rf.com/450wm/oculo/oculo2004/oculo200400003/143645399-no-image-available-icon.jpg?ver=6
