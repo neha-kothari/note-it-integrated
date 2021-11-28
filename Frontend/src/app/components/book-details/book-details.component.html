@@ -12,18 +12,18 @@
             <p class="source-sans-pro"><strong>Book Name: </strong> <span>{{book_details.bookName}}</span></p>
             <p class="source-sans-pro"><strong>Author: </strong> <span>{{book_details.author}}</span></p>
             <p class="source-sans-pro"><strong>Uploaded By: </strong> <span>{{book_details.uploadedByUser}}</span></p>
-            <button class="btn btn-primary mr4" (click)="downloadEbook()">Download ebook</button>
+            <button class="btn btn-primary mr4" (click)="downloadEbook()">Download EBook</button>
             <button type="button" *ngIf='book_details.chapters' class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" >Select Chapters</button>
         </div>
     </div>
 
 
     <div class="row mt-4 mx-auto">
-        <h5 class="inter-regular">Book Description: </h5>
+        <h5 class="inter-medium mb-4">Book Description: </h5>
         <p class="source-sans-pro">{{book_details.description}}</p>
 
     <div *ngIf='book_details.chapters' class="row mt-4">
-        <h5 class="inter-regular">Chapter Information:</h5>
+        <h5 class="inter-medium mb-4">Chapter Information:</h5>
         <div class="shadow br2 mt-4 p-3 source-sans-pro" *ngFor="let book of book_details.chapters">
             <!-- <p><strong>chapterId: </strong><span>{{book.chapterId}}</span></p> -->
             <p><strong>Chapter Number: </strong><span>{{book.chapterNumber}}</span></p>
