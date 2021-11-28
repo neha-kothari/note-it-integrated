@@ -18,7 +18,7 @@ public class ChapterTransformer {
         chapterDTO.setChapterName(chapter.getChapterName());
         chapterDTO.setDescription(chapter.getDescription());
         chapterDTO.setStartPage(chapter.getStartPage());
-        chapterDTO.setEndPage(chapterDTO.getEndPage());
+        chapterDTO.setEndPage(chapter.getEndPage());
         chapterDTO.setBookName(chapter.getBook().getBookName());
         return chapterDTO;
     }
