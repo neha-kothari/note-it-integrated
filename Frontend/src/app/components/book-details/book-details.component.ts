@@ -106,7 +106,7 @@ export class BookDetailsComponent implements OnInit {
     let downloadURL = window.URL.createObjectURL(response);
     let link:any = document.createElement('a');
     link.href = downloadURL;
-    link.download = `download.pdf`;
+    link.download = `${this.book_details.bookName}.pdf`;
     link.click();
     
   }

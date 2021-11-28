@@ -60,7 +60,7 @@ export class CartComponent implements OnInit {
     let downloadURL = window.URL.createObjectURL(response);
     let link:any = document.createElement('a');
     link.href = downloadURL;
-    link.download = `${customName}.pdf`;
+    link.download = `${customName.value}.pdf`;
     link.click();
     
 

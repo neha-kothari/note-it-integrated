@@ -21,7 +21,7 @@ export class UploadComponent implements OnInit {
   ngOnInit(): void {
     $('form').jsonForm({
       schema: {
-        Chapters: {
+        chapters: {
           type: "array",
           items: {
             type: "object",
@@ -63,6 +63,7 @@ export class UploadComponent implements OnInit {
         }
         else {          
           this.chapters = values.chapters;
+          console.log(values.chapters);
           localStorage.setItem("chapters", JSON.stringify(values.chapters));
 
           Swal.fire(
