@@ -17,7 +17,7 @@ export class UploadNotesComponent implements OnInit {
   ngOnInit(): void {
     $('form').jsonForm({
       schema: {
-        Chapters: {
+        chapters: {
           type: "array",
           items: {
             type: "object",

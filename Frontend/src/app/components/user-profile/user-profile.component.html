@@ -32,7 +32,7 @@
                         <th scope="col">Book Name</th>
                         <!-- <th scope="col">ISBN Number</th> -->
                         <th scope="col">Uploaded On</th>
-                        
+                        <th scope="col">Download Link</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -41,6 +41,7 @@
                         <td>{{item.bookName}}</td>
                         <!-- <td>{{item.isbnNumber}}</td> -->
                         <td>{{item.uploadedOn}}</td>
+                        <td><span style="color: blue; cursor: pointer;" (click)="downloadUpload(item.bookId, item.bookName)">Download</span></td>
                       </tr>
             
                     </tbody>
@@ -56,6 +57,7 @@
                   <tr>
                     <th scope="col">Custom Name</th>
                     <th scope="col">Created On</th>
+                    <th scope="col">Download</th>
 
                   </tr>
                 </thead>
@@ -63,6 +65,7 @@
                   <tr *ngFor="let item of profile_details.notebooks">
                     <th scope="row">{{item.customName}}</th>
                     <td scope="row">{{item.createdOn}}</td>
+                    <td scope="row"><span style="color: blue; cursor: pointer;" (click)="downloadMerge(item.notebookId, item.customName)">Download</span></td>
                   </tr>
         
                 </tbody>

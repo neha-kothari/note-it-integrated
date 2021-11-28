@@ -283,5 +283,62 @@ export class RestApiService {
     })
   }
 
+  // Download in the profile
+  download_books(book_id: any){
+    
+    return new Promise((resolve, reject) => {
+      
+      this.http.get(`${API}/books/${book_id}/download`,{
+        responseType: 'blob' as 'json',
+        headers: new HttpHeaders(
+          {
+            'Access-Control-Allow-Origin': '*',
+            'jwtToken': localStorage.jwtToken,
+          }
+        )
+      })
+      .toPromise()
+      .then(
+        (res:any) => { // Success
+          resolve(res);
+        }
+      )
+      .catch((error:any) => { 
+        resolve(error)
+        // console.log("Error",error); 
+    });
+
+    })
+  }
+
+  download_notes(notes_id: any){
+    
+    return new Promise((resolve, reject) => {
+      
+      this.http.get(`${API}/notes/${notes_id}/download`,{
+        responseType: 'blob' as 'json',
+        headers: new HttpHeaders(
+          {
+            'Access-Control-Allow-Origin': '*',
+            'jwtToken': localStorage.jwtToken,
+          }
+        )
+      })
+      .toPromise()
+      .then(
+        (res:any) => { // Success
+          resolve(res);
+        }
+      )
+      .catch((error:any) => { 
+        resolve(error)
+        // console.log("Error",error); 
+    });
+
+    })
+  }
+  
+  
+
  
 }

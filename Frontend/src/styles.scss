@@ -12,3 +12,20 @@
     font-family: 'Inter', sans-serif;
     font-weight: 500;
 }
+
+._jsonform-array-addmore {
+    background: green !important;
+    i{
+        height: 40px!important;
+        width: 40px !important;
+        background: green;
+    }
+}
+._jsonform-array-deletelast {
+    background: red !important;
+    i{
+        height: 40px!important;
+        width: 40px !important;
+        background: red;
+    }
+}
