@@ -39,7 +39,9 @@ public class BookTransformer {
                 bookDTO.setPublisher(book.getPublisher());
                 bookDTO.setYearOfRelease(book.getYearOfRelease());
                 bookDTO.setImageLocation(book.getImageLocation());
-                bookDTO.setUploadedByUser(userRepository.findByUserId(book.getUploadedBy().getUserId()).getName());
+                if (null != userRepository.findByUserId(book.getUploadedBy().getUserId())) {
+                    bookDTO.setUploadedByUser(userRepository.findByUserId(book.getUploadedBy().getUserId()).getName());
+                }
                 bookDTO.setUploadedOn(book.getCreatedOn());
                 bookDTOs.add(bookDTO);
             } else {
